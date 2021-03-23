@@ -1,0 +1,52 @@
+.video {
+    position: relative;// al combinar con absolute, el absolute no va a salir de relative. y puedo acomodar con coordenadas bootm, right etc.
+    max-height: 70rem;
+    overflow: hidden; // si se sale de su contenido, que se oculte
+    
+    .overlay{
+        position: absolute;
+        width: 100%; // para que el overlay ocupe todo el video
+        height: 100%;
+        // codigo generado con colorzila
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,9e37f2+70,ffffff+100&0.8+0,0.5+100 */
+        background: -moz-linear-gradient(-45deg,  rgba(137,28,30,0.8) 0%, rgba(158,55,242,0.59) 70%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.59) 70%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.59) 70%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc891c1e', endColorstr='#80ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        // codigo generado con colorzila
+    }
+    video{
+        display: block;
+        width: 100%;
+       
+    }
+}
+
+.contenido-video { // lo pongo aparte por problemas de andidamiento
+    display: flex;
+    height: 100%; // queu tome la altura del overlay asi centra de forma V
+    align-items: center;
+    position: relative;
+    z-index: 1;// mandad el overlay detras del texto.
+
+    h2{
+        display: flex;
+        flex-direction: column; // fuerza el salto de linea cuando comience el span
+        color: $blanco;
+        font-size: 7rem;
+        align-items: flex-start; // asi el span no se extienede igual que elh2
+
+        span {
+            background-color: $rosa;
+            font-size: 2rem;
+            padding: 1rem 2rem; // esto lo que hace es dejar un espacio entre la letra y el fondo
+        }
+        @media  (max-width: $telefono)
+        {
+            font-size: 4rem;
+            span{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

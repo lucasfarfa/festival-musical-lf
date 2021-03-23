@@ -1,0 +1,21 @@
+@mixin telefono {
+    @media (min-width: $telefono){
+        @content; // nos permite pasar propiedades desde el include
+    }
+}
+@mixin tablet {
+    @media (min-width: $tablet){
+        @content; // nos permite pasar propiedades desde el include
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktop){
+        @content; // nos permite pasar propiedades desde el include
+    }
+}
+@mixin grid ($columnas, $espaciado) {// genera grid
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
+

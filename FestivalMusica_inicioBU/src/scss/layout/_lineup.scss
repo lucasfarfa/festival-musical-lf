@@ -1,0 +1,75 @@
+.lineup{
+    background-color: $rosa;
+    padding: $separacion 0;
+
+    h3, p {
+        text-align: center;
+        color: $blanco;
+    }
+    .dia{
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+}
+
+.escenarios-contenedor {
+    @include tablet {
+        @include grid (2, $separacion);
+    }
+
+    .escenario{
+        padding-top: $separacion / 2;
+    }
+
+    .nombre-escenario {
+        color: $negro;
+        font-size: 2rem;
+        font-weight: $delgada;
+
+        &:after{ // que despues de nombre escenario coloque esto
+            content: ''; //siempre que trabajo con un after debo usar un content
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center; // centra el icono
+        }// reglas generales para ico edm y rock
+    }
+}
+
+// icono paara edm
+.edm .nombre-escenario{
+    &:after {
+        background-image: url(../img/icono_edm.png);
+    }
+}
+// icono paara rock
+.rock .nombre-escenario{
+    &:after {
+        background-image: url(../img/icono_rock.png);
+    }
+}
+
+
+.calendario {
+    padding: 0;
+    list-style: none; // quito las vinñetas dde la lista
+    li {
+        padding: $separacion / 2;
+        font-weight: $bold;
+        span{
+            font-weight: $regular;
+        }
+    }
+    
+}
+
+// oscurecer items de lista
+.bg-verde .calendario li:nth-child(odd){ // ood es los impares de la lista
+    background-color: darken($verde, 10); //funcion de scc que oscurece tu color
+}
+.bg-amarillo .calendario li:nth-child(odd){ // ood es los impares de la lista
+    background-color: darken($amarillo, 10); //funcion de scc que oscurece tu color
+}

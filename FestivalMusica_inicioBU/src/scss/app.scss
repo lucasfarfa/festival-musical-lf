@@ -1,0 +1,19 @@
+@import 'base/normalize'; // anado los archivos externos
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap'); // letras de google
+@import 'base/variables';
+@import 'base/mixins'; // es muy importante el orden de los imports
+@import 'base/globales';
+@import 'base/utilidades';
+
+@import 'layout/header';
+@import 'layout/video';
+@import 'layout/festival';
+@import 'layout/lineup';
+@import 'layout/galeria';
+@import 'layout/boletos';
+@import 'layout/footer';
+
+
+
+// hay que compilarlo desde gulp
+// VENTAJA DE SASS, proyecto mas facil de mantener, ya que podemos separar las funciones de sass en distintos archivos.

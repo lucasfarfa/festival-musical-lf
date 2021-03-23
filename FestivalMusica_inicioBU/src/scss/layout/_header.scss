@@ -1,0 +1,48 @@
+// anidar codigo ejemplo
+.header{
+    background-color: $verde;
+    
+    
+    .contenido-header{ // como es hijo de header, lo puedo anidar
+        padding: $separacion / 2 0; //5rem / 2 rem     
+        
+        @include tablet { // le puedo pasar propiedades persoonalizadas al mixin
+            display: flex;
+            justify-content: space-between; // asi la barra de nav me queda bien
+            align-items: center;
+        }
+        
+    }
+
+
+    h1 { // ESTILOS SOLO A H1 DEL HEADER
+        color: $blanco;
+        margin-bottom: 1rem;
+        @include tablet{
+            margin-bottom: 0;
+        }
+        text-align: center;
+    }
+    &.fijo{ // cuando tenga clase header Y fijo
+        position: fixed; // sirve para dejra el nav fijo
+        width: 100%;
+        box-shadow: 0 .3rem .1rem #444;
+    }
+
+} // una vez que haya 3 niveles de selectores, terminar anidamiento.
+
+.navegacion-principal {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; //sino en flex el gap no me soporta
+
+    a {
+        color: $blanco;
+        font-size: 2rem;
+
+        &:hover { // el & es para anidar el hover al <a> sin que cause problemas. &referencia elemento padre
+            color: $amarillo;
+        }
+    }
+    
+}
